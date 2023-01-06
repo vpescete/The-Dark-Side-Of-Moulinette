@@ -56,6 +56,8 @@ if __name__ == '__main__':
   pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_strjoin.py'])
   print('FT_STRTRIM')
   pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_strtrim.py'])
+  print('FT_STRITOA')
+  pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_stritoa.py'])
 
 
 # gcc -shared -o libft.so *.o
