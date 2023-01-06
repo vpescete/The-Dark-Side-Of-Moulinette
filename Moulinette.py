@@ -50,6 +50,12 @@ if __name__ == '__main__':
   # pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_calloc.py'])
   print('FT_STRDUP')
   pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_strdup.py'])
+  print('FT_SUBSTR')
+  pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_substr.py'])
+  print('FT_STRJOIN')
+  pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_strjoin.py'])
+  print('FT_STRTRIM')
+  pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_strtrim.py'])
 
 
 # gcc -shared -o libft.so *.o

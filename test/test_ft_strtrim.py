@@ -14,111 +14,111 @@ library2_path = os.path.join(cwd, 'libft_tester.so')
 libft = ctypes.cdll.LoadLibrary(library_path)
 libft_tester = ctypes.cdll.LoadLibrary(library2_path)
 
-def test1_ft_strjoin():
+def test1_ft_strtrim():
     # input function
-    test_string = "Ciao "
-    test_toattach = "Mondo"
+    test_string = "   Ciao   "
+    test_toattach = "C "
 
     test_string_buffer = ctypes.create_string_buffer(test_string.encode())
     test_string_buffer2 = ctypes.create_string_buffer(test_toattach.encode())
 
-    # Definizione della funzione ft_strjoin nella libreria
-    ft_strjoin = libft.ft_strjoin
+    # Definizione della funzione ft_strtrim nella libreria
+    ft_strtrim = libft.ft_strtrim
 
-    # Define the strjoin function in the library
-    strjoin = libft_tester.strjoin
+    # Define the strtrim function in the library
+    strtrim = libft_tester.strtrim
 
-    result = ctypes.string_at(ft_strjoin(test_string_buffer, test_string_buffer2))
+    result = ctypes.string_at(ft_strtrim(test_string_buffer, test_string_buffer2))
     
     # chiamare la funzione originale con i dati di input
-    original_result = ctypes.string_at(strjoin(test_string_buffer, test_string_buffer2))
+    original_result = ctypes.string_at(strtrim(test_string_buffer, test_string_buffer2))
 
     print("======ERROR OUTPUT=======")
-    print("ft_strjoin: ",result)
-    print("strjoin: ",original_result)
+    print("ft_strtrim: ",result)
+    print("strtrim: ",original_result)
 
     # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
     assert result == original_result
     
-def test2_ft_strjoin():
+def test2_ft_strtrim():
     # input function
-    test_string = "Ciao "
-    test_toattach = ""
+    test_string = " ciao Vaffanculo ciao    "
+    test_toattach = "ciao "
 
     test_string_buffer = ctypes.create_string_buffer(test_string.encode())
     test_string_buffer2 = ctypes.create_string_buffer(test_toattach.encode())
 
-    # Definizione della funzione ft_strjoin nella libreria
-    ft_strjoin = libft.ft_strjoin
+    # Definizione della funzione ft_strtrim nella libreria
+    ft_strtrim = libft.ft_strtrim
 
-    # Define the strjoin function in the library
-    strjoin = libft_tester.strjoin
+    # Define the strtrim function in the library
+    strtrim = libft_tester.strtrim
 
-    result = ctypes.string_at(ft_strjoin(test_string_buffer, test_string_buffer2))
+    result = ctypes.string_at(ft_strtrim(test_string_buffer, test_string_buffer2))
     
     # chiamare la funzione originale con i dati di input
-    original_result = ctypes.string_at(strjoin(test_string_buffer, test_string_buffer2))
+    original_result = ctypes.string_at(strtrim(test_string_buffer, test_string_buffer2))
 
     print("======ERROR OUTPUT=======")
-    print("ft_strjoin: ",result)
-    print("strjoin: ",original_result)
+    print("ft_strtrim: ",result)
+    print("strtrim: ",original_result)
 
     # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
     assert result == original_result
         
-def test3_ft_strjoin():
+def test3_ft_strtrim():
     # input function
-    test_string = ""
+    test_string = "vaffancul"
     test_toattach = "_ciao"
 
     test_string_buffer = ctypes.create_string_buffer(test_string.encode())
     test_string_buffer2 = ctypes.create_string_buffer(test_toattach.encode())
 
-    # Definizione della funzione ft_strjoin nella libreria
-    ft_strjoin = libft.ft_strjoin
+    # Definizione della funzione ft_strtrim nella libreria
+    ft_strtrim = libft.ft_strtrim
 
-    # Define the strjoin function in the library
-    strjoin = libft_tester.strjoin
+    # Define the strtrim function in the library
+    strtrim = libft_tester.strtrim
 
-    result = ctypes.string_at(ft_strjoin(test_string_buffer, test_string_buffer2))
+    result = ctypes.string_at(ft_strtrim(test_string_buffer, test_string_buffer2))
     
     # chiamare la funzione originale con i dati di input
-    original_result = ctypes.string_at(strjoin(test_string_buffer, test_string_buffer2))
+    original_result = ctypes.string_at(strtrim(test_string_buffer, test_string_buffer2))
 
     print("======ERROR OUTPUT=======")
-    print("ft_strjoin: ",result)
-    print("strjoin: ",original_result)
+    print("ft_strtrim: ",result)
+    print("strtrim: ",original_result)
 
     # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
     assert result == original_result
     
-def test4_ft_strjoin():
+def test4_ft_strtrim():
     # input function
-    test_string = "Ciao "
+    test_string = ""
     test_toattach = "vjdnvkjdfnvkjnksdfjdskfjsdf"
 
     test_string_buffer = ctypes.create_string_buffer(test_string.encode())
     test_string_buffer2 = ctypes.create_string_buffer(test_toattach.encode())
 
-    # Definizione della funzione ft_strjoin nella libreria
-    ft_strjoin = libft.ft_strjoin
+    # Definizione della funzione ft_strtrim nella libreria
+    ft_strtrim = libft.ft_strtrim
 
-    # Define the strjoin function in the library
-    strjoin = libft_tester.strjoin
+    # Define the strtrim function in the library
+    strtrim = libft_tester.strtrim
 
-    result = ctypes.string_at(ft_strjoin(test_string_buffer, test_string_buffer2))
+    result = ctypes.string_at(ft_strtrim(test_string_buffer, test_string_buffer2))
     
     # chiamare la funzione originale con i dati di input
-    original_result = ctypes.string_at(strjoin(test_string_buffer, test_string_buffer2))
+    original_result = ctypes.string_at(strtrim(test_string_buffer, test_string_buffer2))
 
     print("======ERROR OUTPUT=======")
-    print("ft_strjoin: ",result)
-    print("strjoin: ",original_result)
+    print("ft_strtrim: ",result)
+    print("strtrim: ",original_result)
 
     # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
     assert result == original_result
     
-def test5_ft_strjoin():
+def test5_ft_strtrim():
     # input function
     test_string = ""
     test_toattach = ""
@@ -126,20 +126,20 @@ def test5_ft_strjoin():
     test_string_buffer = ctypes.create_string_buffer(test_string.encode())
     test_string_buffer2 = ctypes.create_string_buffer(test_toattach.encode())
 
-    # Definizione della funzione ft_strjoin nella libreria
-    ft_strjoin = libft.ft_strjoin
+    # Definizione della funzione ft_strtrim nella libreria
+    ft_strtrim = libft.ft_strtrim
 
-    # Define the strjoin function in the library
-    strjoin = libft_tester.strjoin
+    # Define the strtrim function in the library
+    strtrim = libft_tester.strtrim
 
-    result = ctypes.string_at(ft_strjoin(test_string_buffer, test_string_buffer2))
+    result = ctypes.string_at(ft_strtrim(test_string_buffer, test_string_buffer2))
     
     # chiamare la funzione originale con i dati di input
-    original_result = ctypes.string_at(strjoin(test_string_buffer, test_string_buffer2))
+    original_result = ctypes.string_at(strtrim(test_string_buffer, test_string_buffer2))
 
     print("======ERROR OUTPUT=======")
-    print("ft_strjoin: ",result)
-    print("strjoin: ",original_result)
+    print("ft_strtrim: ",result)
+    print("strtrim: ",original_result)
 
     # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
     assert  result == original_result
