@@ -23,10 +23,10 @@ def test1_ft_strchr():
     # Define the strchr function in the library
     strchr = libc.strchr
 
-    result = ft_strchr( test_src, test_char)
+    result = print(ft_strchr( test_src, test_char))
     
     # chiamare la funzione originale con i dati di input
-    original_result = strchr( test_src, test_char)
+    original_result = print(strchr( test_src, test_char))
 
     # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
     assert result == original_result

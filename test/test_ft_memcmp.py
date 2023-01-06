@@ -24,10 +24,10 @@ def test1_ft_memcmp():
     # Define the memcmp function in the library
     memcmp = libc.memcmp
 
-    result = ft_memcmp(test_String, test_string2, test_size)
+    result = ft_memcmp(test_string, test_string2, test_size)
     
     # chiamare la funzione originale con i dati di input
-    original_result = memcmp(test_String, test_string2, test_size)
+    original_result = memcmp(test_string, test_string2, test_size)
 
     # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
     assert result == original_result

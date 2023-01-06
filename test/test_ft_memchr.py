@@ -24,10 +24,10 @@ def test1_ft_memchr():
     # Define the memchr function in the library
     memchr = libc.memchr
 
-    result = ft_memchr(test_String, test_char, test_size)
+    result = ft_memchr(test_string, test_char, test_size)
     
     # chiamare la funzione originale con i dati di input
-    original_result = memchr(test_String, test_char, test_size)
+    original_result = memchr(test_string, test_char, test_size)
 
     # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
     assert result == original_result
