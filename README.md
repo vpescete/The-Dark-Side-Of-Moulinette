@@ -2,4 +2,4 @@
 A personal mouinette to check Libft Project of 42 School Common Core
 
 
-# gcc -shared -o libft.so *.o
+# from the command line use --> ./to_run.sh
