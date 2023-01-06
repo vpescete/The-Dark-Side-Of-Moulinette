@@ -11,11 +11,17 @@ library_path = os.path.join(cwd, 'libft.so')
 libft = ctypes.cdll.LoadLibrary(library_path)
 libc = ctypes.cdll.LoadLibrary('libc.so.6')
 
+@pytest.mark.parametrize("num_elements, element_size, expected_output", [
+    (5, 4, [0, 0, 0, 0, 0]),
+    (3, 2, [0, 0, 0]),
+    (2, 3, [0, 0])
+])
+
 def test1_ft_calloc():
 
     # input function
-    num_elements = 
-    element_size = 
+    # num_elements = 2
+    # element_size = 6
 
     # Definizione della funzione ft_calloc nella libreria
     ft_calloc = libft.ft_calloc

@@ -31,3 +31,87 @@ def test1_ft_memcmp():
 
     # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
     assert result == original_result
+
+def test2_ft_memcmp():
+
+    # input function
+    test_string = "    +18329jchdbckjdhb"
+    test_string2 = "  +18329jchdbckjdhb"
+    test_size = len(test_string)
+
+    # Definizione della funzione ft_memcmp nella libreria
+    ft_memcmp = libft.ft_memcmp
+
+    # Define the memcmp function in the library
+    memcmp = libc.memcmp
+
+    result = ft_memcmp(test_string, test_string2, test_size)
+    
+    # chiamare la funzione originale con i dati di input
+    original_result = memcmp(test_string, test_string2, test_size)
+
+    # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
+    assert result == original_result
+
+def test3_ft_memcmp():
+
+    # input function
+    test_string = "    Ciao mondo"
+    test_string2 = "    +18329jchdbckjdhb"
+    test_size = len(test_string)
+
+    # Definizione della funzione ft_memcmp nella libreria
+    ft_memcmp = libft.ft_memcmp
+
+    # Define the memcmp function in the library
+    memcmp = libc.memcmp
+
+    result = ft_memcmp(test_string, test_string2, test_size)
+    
+    # chiamare la funzione originale con i dati di input
+    original_result = memcmp(test_string, test_string2, test_size)
+
+    # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
+    assert result == original_result
+
+def test4_ft_memcmp():
+
+    # input function
+    test_string = "Ciao mondo"
+    test_string2 = "    +18329jchdbckjdhb"
+    test_size = len(test_string)
+
+    # Definizione della funzione ft_memcmp nella libreria
+    ft_memcmp = libft.ft_memcmp
+
+    # Define the memcmp function in the library
+    memcmp = libc.memcmp
+
+    result = ft_memcmp(test_string, test_string2, test_size)
+    
+    # chiamare la funzione originale con i dati di input
+    original_result = memcmp(test_string, test_string2, test_size)
+
+    # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
+    assert result == original_result
+
+def test5_ft_memcmp():
+
+    # input function
+    test_string = "    Ciao mondo"
+    test_string2 = "+18329jchdbckjdhb"
+    test_size = len(test_string)
+
+    # Definizione della funzione ft_memcmp nella libreria
+    ft_memcmp = libft.ft_memcmp
+
+    # Define the memcmp function in the library
+    memcmp = libc.memcmp
+
+    result = ft_memcmp(test_string, test_string2, test_size)
+    
+    # chiamare la funzione originale con i dati di input
+    original_result = memcmp(test_string, test_string2, test_size)
+
+    # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
+    assert result == original_result

@@ -31,3 +31,87 @@ def test1_ft_memchr():
 
     # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
     assert result == original_result
+
+def test2_ft_memchr():
+
+    # input function
+    test_string = "    +18329jchdbckjdhb"
+    test_char = '+'
+    test_size = len(test_string)
+
+    # Definizione della funzione ft_memchr nella libreria
+    ft_memchr = libft.ft_memchr
+
+    # Define the memchr function in the library
+    memchr = libc.memchr
+
+    result = ft_memchr(test_string, test_char, test_size)
+    
+    # chiamare la funzione originale con i dati di input
+    original_result = memchr(test_string, test_char, test_size)
+
+    # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
+    assert result == original_result
+
+def test3_ft_memchr():
+
+    # input function
+    test_string = "    +18329jchdbckjdhb"
+    test_char = '   '
+    test_size = len(test_string)
+
+    # Definizione della funzione ft_memchr nella libreria
+    ft_memchr = libft.ft_memchr
+
+    # Define the memchr function in the library
+    memchr = libc.memchr
+
+    result = ft_memchr(test_string, test_char, test_size)
+    
+    # chiamare la funzione originale con i dati di input
+    original_result = memchr(test_string, test_char, test_size)
+
+    # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
+    assert result == original_result
+
+def test4_ft_memchr():
+
+    # input function
+    test_string = "    +18329jchdbckjdhb"
+    test_char = 'k'
+    test_size = len(test_string)
+
+    # Definizione della funzione ft_memchr nella libreria
+    ft_memchr = libft.ft_memchr
+
+    # Define the memchr function in the library
+    memchr = libc.memchr
+
+    result = ft_memchr(test_string, test_char, test_size)
+    
+    # chiamare la funzione originale con i dati di input
+    original_result = memchr(test_string, test_char, test_size)
+
+    # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
+    assert result == original_result
+
+def test5_ft_memchr():
+
+    # input function
+    test_string = ""
+    test_char = 'k'
+    test_size = len(test_string)
+
+    # Definizione della funzione ft_memchr nella libreria
+    ft_memchr = libft.ft_memchr
+
+    # Define the memchr function in the library
+    memchr = libc.memchr
+
+    result = ft_memchr(test_string, test_char, test_size)
+    
+    # chiamare la funzione originale con i dati di input
+    original_result = memchr(test_string, test_char, test_size)
+
+    # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
+    assert result == original_result

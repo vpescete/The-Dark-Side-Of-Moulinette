@@ -30,3 +30,85 @@ def test1_ft_strrchr():
 
     # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
     assert result == original_result
+
+def test2_ft_strrchr():
+
+    # input function
+    test_src = "ciao mondo"
+    test_char = 48
+
+    # Definizione della funzione ft_strrchr nella libreria
+    ft_strrchr = libft.ft_strrchr
+
+    # Define the strrchr function in the library
+    strrchr = libc.strrchr
+
+    result = print(ft_strrchr( test_src, test_char))
+    
+    # chiamare la funzione originale con i dati di input
+    original_result = print(strrchr( test_src, test_char))
+
+    # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
+    assert result == original_result
+
+def test3_ft_strrchr():
+
+    # input function
+    test_src = "ciao mondo"
+    test_char = 32
+
+    # Definizione della funzione ft_strrchr nella libreria
+    ft_strrchr = libft.ft_strrchr
+
+    # Define the strrchr function in the library
+    strrchr = libc.strrchr
+
+    result = print(ft_strrchr( test_src, test_char))
+    
+    # chiamare la funzione originale con i dati di input
+    original_result = print(strrchr( test_src, test_char))
+
+    # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
+    assert result == original_result
+
+
+def test4_ft_strrchr():
+
+    # input function
+    test_src = "ciao      mondo"
+    test_char = 12
+
+    # Definizione della funzione ft_strrchr nella libreria
+    ft_strrchr = libft.ft_strrchr
+
+    # Define the strrchr function in the library
+    strrchr = libc.strrchr
+
+    result = print(ft_strrchr( test_src, test_char))
+    
+    # chiamare la funzione originale con i dati di input
+    original_result = print(strrchr( test_src, test_char))
+
+    # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
+    assert result == original_result
+
+
+def test5_ft_strrchr():
+
+    # input function
+    test_src = "ciao mondo"
+    test_char = '\n'
+
+    # Definizione della funzione ft_strrchr nella libreria
+    ft_strrchr = libft.ft_strrchr
+
+    # Define the strrchr function in the library
+    strrchr = libc.strrchr
+
+    result = print(ft_strrchr( test_src, test_char))
+    
+    # chiamare la funzione originale con i dati di input
+    original_result = print(strrchr( test_src, test_char))
+
+    # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
+    assert result == original_result

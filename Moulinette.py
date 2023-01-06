@@ -48,8 +48,8 @@ if __name__ == '__main__':
 
   # print('FT_CALLOC')
   # pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_calloc.py'])
-  # print('FT_STRDUP')
-  # pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_strdup.py'])
+  print('FT_STRDUP')
+  pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_strdup.py'])
 
 
 # gcc -shared -o libft.so *.o
