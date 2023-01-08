@@ -68,3 +68,5 @@ if __name__ == '__main__':
   pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_putnbr_fd.py'])
   print('FT_STRLCPY')
   pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_strlcpy.py'])
+  print('FT_STRLCAT')
+  pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_strlcat.py'])
