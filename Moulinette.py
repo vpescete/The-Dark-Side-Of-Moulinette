@@ -44,7 +44,7 @@ if __name__ == '__main__':
   print('FT_TOUPPER')
   pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_toupper.py'])
 
-  #LE FUNZIONI CALLOC E STRDUP RESTITUISCO GLI INDIRIZZI DI MEMORIA ---> FIXARE UTILIZZANDO PRINTF PER VEDERE IL RISULTATO
+  #LA FUNZIONE CALLOC RESTITUISCO GLI INDIRIZZI DI MEMORIA ---> DA FIXARE 
 
   # print('FT_CALLOC')
   # pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_calloc.py'])
@@ -58,6 +58,11 @@ if __name__ == '__main__':
   pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_strtrim.py'])
   print('FT_ITOA')
   pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_itoa.py'])
-
-
-# gcc -shared -o libft.so *.o
+  print('FT_PUTCHAR_FD')
+  pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_putchar_fd.py'])
+  print('FT_PUTSTR_FD')
+  pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_putstr_fd.py'])
+  print('FT_PUTENDL_FD')
+  pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_putendl_fd.py'])
+  print('FT_PUTNBR_FD')
+  pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_putnbr_fd.py'])

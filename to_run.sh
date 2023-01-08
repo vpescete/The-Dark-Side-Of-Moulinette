@@ -7,3 +7,5 @@ make fclean
 chmod 775 to_run.sh
 
 python3 Moulinette.py
+
+rm -f *.txt
