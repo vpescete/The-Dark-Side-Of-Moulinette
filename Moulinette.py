@@ -70,3 +70,7 @@ if __name__ == '__main__':
   pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_strlcpy.py'])
   print('FT_STRLCAT')
   pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_strlcat.py'])
+  print('FT_STRNCMP')
+  pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_strncmp.py'])
+  print('FT_STRNSTR')
+  pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_strnstr.py'])
