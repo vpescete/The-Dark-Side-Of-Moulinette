@@ -17,19 +17,19 @@ if __name__ == '__main__':
   pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_memcmp.py'])
   print('FT_MEMCPY')
   pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_memcpy.py'])
-
-  #LE FUNZIONI MEMMOVE VANNO IN SEGMANTTION FAULT ----> DA FIXARE
-
-  # print('FT_MEMMOVE')
-  # pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_memmove.py'])
-  # print('FT_MEMSET')
-  # pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_memset.py'])
+  print('FT_MEMMOVE')
+  pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_memmove.py'])
+  print('FT_MEMSET')
+  pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_memset.py'])
+  print('FT_TOLOWER')
+  pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_tolower.py'])
+  print('FT_TOUPPER')
+  pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_toupper.py'])
 
   #LA FUNZIONE BZERO RESTITUISCE UN VALORE TOTALMENTE DIFFERENTE ---> DA FIXARE
 
   # print('FT_BZERO')
   # pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_bzero.py'])
-
 
   print('FT_ATOI')
   pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_atoi.py'])
@@ -39,15 +39,16 @@ if __name__ == '__main__':
   pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_strlen.py'])
   print('FT_STRRCHR')
   pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_strrchr.py'])
-  print('FT_TOLOWER')
-  pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_tolower.py'])
-  print('FT_TOUPPER')
-  pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_toupper.py'])
-
-  #LA FUNZIONE CALLOC RESTITUISCO GLI INDIRIZZI DI MEMORIA ---> DA FIXARE 
+  print('FT_STRLCPY')
+  pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_strlcpy.py'])
+  print('FT_STRLCAT')
+  pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_strlcat.py'])
+  
+  #LE FUNZIONI CALLOC E STRDUP RESTITUISCO GLI INDIRIZZI DI MEMORIA ---> FIXARE UTILIZZANDO PRINTF PER VEDERE IL RISULTATO
 
   # print('FT_CALLOC')
   # pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_calloc.py'])
+
   print('FT_STRDUP')
   pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_strdup.py'])
   print('FT_SUBSTR')
@@ -66,11 +67,9 @@ if __name__ == '__main__':
   pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_putendl_fd.py'])
   print('FT_PUTNBR_FD')
   pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_putnbr_fd.py'])
-  print('FT_STRLCPY')
-  pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_strlcpy.py'])
-  print('FT_STRLCAT')
-  pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_strlcat.py'])
   print('FT_STRNCMP')
   pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_strncmp.py'])
   print('FT_STRNSTR')
   pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_strnstr.py'])
+  print('FT_SPLIT')
+  pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_split.py'])

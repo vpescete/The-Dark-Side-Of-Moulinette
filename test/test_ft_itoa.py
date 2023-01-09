@@ -43,7 +43,7 @@ def test1_ft_itoa():
 
 def test2_ft_itoa():
     # input function
-    test_int = 4359585348
+    test_int = 43595
 
     # Definizione della funzione ft_itoa nella libreria
     ft_itoa = libft.ft_itoa
@@ -97,7 +97,7 @@ def test3_ft_itoa():
 
 def test4_ft_itoa():
     # input function
-    test_int = "ciao"
+    test_int = -34658342
 
     # Definizione della funzione ft_itoa nella libreria
     ft_itoa = libft.ft_itoa
