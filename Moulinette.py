@@ -25,12 +25,8 @@ if __name__ == '__main__':
   pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_tolower.py'])
   print('FT_TOUPPER')
   pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_toupper.py'])
-
-  #LA FUNZIONE BZERO RESTITUISCE UN VALORE TOTALMENTE DIFFERENTE ---> DA FIXARE
-
-  # print('FT_BZERO')
-  # pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_bzero.py'])
-
+  print('FT_BZERO')
+  pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_bzero.py'])
   print('FT_ATOI')
   pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_atoi.py'])
   print('FT_STRCHR')
@@ -43,12 +39,8 @@ if __name__ == '__main__':
   pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_strlcpy.py'])
   print('FT_STRLCAT')
   pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_strlcat.py'])
-  
-  #LE FUNZIONI CALLOC E STRDUP RESTITUISCO GLI INDIRIZZI DI MEMORIA ---> FIXARE UTILIZZANDO PRINTF PER VEDERE IL RISULTATO
-
-  # print('FT_CALLOC')
-  # pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_calloc.py'])
-
+  print('FT_CALLOC')
+  pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_calloc.py'])
   print('FT_STRDUP')
   pytest.main(['-v', '--tb=short', '--no-header', './test/test_ft_strdup.py'])
   print('FT_SUBSTR')
