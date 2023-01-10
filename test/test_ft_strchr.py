@@ -1,5 +1,5 @@
 import ctypes
-
+import pytest
 import os
 
 # Get the current working directory
@@ -11,106 +11,23 @@ library_path = os.path.join(cwd, 'libft.so')
 libft = ctypes.cdll.LoadLibrary(library_path)
 libc = ctypes.cdll.LoadLibrary('libc.so.6')
 
-def test1_ft_strchr():
+test_data = [
+    ["hello world", ord('w')],
+    ["hello world", ord('z')],
+    ["", ord('a')],
+    ["\x00hello world", ord('\x00')],
+    ["", ord('h')]
+]
 
-    # input function
-    test_src = "ciao mondo"
-    test_char = 99
-
-    # Definizione della funzione ft_strchr nella libreria
+@pytest.mark.parametrize("test_src, test_char",test_data, ids=[f"string: {t[0]}, char:{chr(t[1])}" for t in test_data])
+def test_ft_strchr(test_src, test_char):
     ft_strchr = libft.ft_strchr
-
-    # Define the strchr function in the library
     strchr = libc.strchr
 
-    result = print(ft_strchr( test_src, test_char))
+    test_src = bytes(test_src, 'utf-8')
     
-    # chiamare la funzione originale con i dati di input
-    original_result = print(strchr( test_src, test_char))
+    result = print(ft_strchr(test_src, test_char))
+    original_result = print(strchr(test_src, test_char))
 
     # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
-    assert result == original_result
-
-def test2_ft_strchr():
-
-    # input function
-    test_src = "ciao mondo"
-    test_char = 48
-
-    # Definizione della funzione ft_strchr nella libreria
-    ft_strchr = libft.ft_strchr
-
-    # Define the strchr function in the library
-    strchr = libc.strchr
-
-    result = print(ft_strchr( test_src, test_char))
-    
-    # chiamare la funzione originale con i dati di input
-    original_result = print(strchr( test_src, test_char))
-
-    # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
-    assert result == original_result
-
-def test3_ft_strchr():
-
-    # input function
-    test_src = "ciao mondo"
-    test_char = 32
-
-    # Definizione della funzione ft_strchr nella libreria
-    ft_strchr = libft.ft_strchr
-
-    # Define the strchr function in the library
-    strchr = libc.strchr
-
-    result = print(ft_strchr( test_src, test_char))
-    
-    # chiamare la funzione originale con i dati di input
-    original_result = print(strchr( test_src, test_char))
-
-    # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
-    assert result == original_result
-
-
-def test4_ft_strchr():
-
-    # input function
-    test_src = "ciao      mondo"
-    test_char = 12
-
-    # Definizione della funzione ft_strchr nella libreria
-    ft_strchr = libft.ft_strchr
-
-    # Define the strchr function in the library
-    strchr = libc.strchr
-
-    result = print(ft_strchr( test_src, test_char))
-    
-    # chiamare la funzione originale con i dati di input
-    original_result = print(strchr( test_src, test_char))
-
-    # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
-    assert result == original_result
-
-
-def test5_ft_strchr():
-
-    # input function
-    test_src = "ciao mondo"
-    test_char = '\n'
-
-    # Definizione della funzione ft_strchr nella libreria
-    ft_strchr = libft.ft_strchr
-
-    # Define the strchr function in the library
-    strchr = libc.strchr
-
-    result = print(ft_strchr( test_src, test_char))
-    
-    # chiamare la funzione originale con i dati di input
-    original_result = print(strchr( test_src, test_char))
-
-    # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
-    assert result == original_result
-
-
+    assert result == original_result 

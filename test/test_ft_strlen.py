@@ -1,5 +1,5 @@
 import ctypes
-
+import pytest
 import os
 
 # Get the current working directory
@@ -11,98 +11,20 @@ library_path = os.path.join(cwd, 'libft.so')
 libft = ctypes.cdll.LoadLibrary(library_path)
 libc = ctypes.cdll.LoadLibrary('libc.so.6')
 
-def test1_ft_strlen():
-
-    # input function
-    test_src = "ciao mondo"
-
-    # Definizione della funzione ft_strlen nella libreria
+test_strings = ["ciao mondo", "", "    +-18329jchdbckjdhb", "ciao mondo               ", "ciao    \n mondo", "    -+18329234987298472904802498", "    + 18329234987298472904802498", "c"]
+ids = ["input: '{}'".format(t) for t in test_strings]
+@pytest.mark.parametrize("test_string", test_strings, ids = ids)
+def test_ft_strlen(test_string):
+    # Define the function ft_strlen in the library
     ft_strlen = libft.ft_strlen
 
     # Define the strlen function in the library
     strlen = libc.strlen
 
-    result = ft_strlen( test_src)
-    
-    # chiamare la funzione originale con i dati di input
-    original_result = strlen( test_src)
+    # Run the test
+    result = ft_strlen(test_string)
+    original_result = strlen(test_string)
 
-    # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
-    assert result == original_result
-
-def test2_ft_strlen():
-
-    # input function
-    test_src = ""
-
-    # Definizione della funzione ft_strlen nella libreria
-    ft_strlen = libft.ft_strlen
-
-    # Define the strlen function in the library
-    strlen = libc.strlen
-
-    result = ft_strlen( test_src)
-    
-    # chiamare la funzione originale con i dati di input
-    original_result = strlen( test_src)
-
-    # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
-    assert result == original_result
-
-def test3_ft_strlen():
-
-    # input function
-    test_src = "ciao mondo               "
-
-    # Definizione della funzione ft_strlen nella libreria
-    ft_strlen = libft.ft_strlen
-
-    # Define the strlen function in the library
-    strlen = libc.strlen
-
-    result = ft_strlen( test_src)
-    
-    # chiamare la funzione originale con i dati di input
-    original_result = strlen( test_src)
-
-    # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
-    assert result == original_result
-
-def test4_ft_strlen():
-
-    # input function
-    test_src = "ciao    \n mondo"
-
-    # Definizione della funzione ft_strlen nella libreria
-    ft_strlen = libft.ft_strlen
-
-    # Define the strlen function in the library
-    strlen = libc.strlen
-
-    result = ft_strlen( test_src)
-    
-    # chiamare la funzione originale con i dati di input
-    original_result = strlen( test_src)
-
-    # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
-    assert result == original_result
-
-def test5_ft_strlen():
-
-    # input function
-    test_src = "c"
-
-    # Definizione della funzione ft_strlen nella libreria
-    ft_strlen = libft.ft_strlen
-
-    # Define the strlen function in the library
-    strlen = libc.strlen
-
-    result = ft_strlen( test_src)
-    
-    # chiamare la funzione originale con i dati di input
-    original_result = strlen( test_src)
-
-    # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
+    # Check that the results are equal
     assert result == original_result
 

@@ -1,4 +1,5 @@
 import ctypes
+import pytest
 import os
 
 # Get the current working directory
@@ -9,37 +10,22 @@ library_path = os.path.join(cwd, 'libft.so')
 
 libft = ctypes.cdll.LoadLibrary(library_path)
 
-# Load the library that implements strlcpy
 libbsd_path = '/lib/x86_64-linux-gnu/libbsd.so.0'
 libbsd = ctypes.cdll.LoadLibrary(libbsd_path)
 
-def test1_ft_strlcpy():
+test_dests = [ctypes.create_string_buffer(b'\0' * 20)]
+test_strings2 = [b"1234567890", b"ciaocomeva", b"", b"         \n"]
+test_sizes = [20, 5, 15, 1]
 
-    # input function
-    test_dst = ctypes.create_string_buffer(b'\0' * 20)
-    test_src = b"1234567890"
-    test_size = 20
+test_data = [(test_dests[0], test_strings2[0], test_sizes[0]), 
+             (test_dests[0], test_strings2[1], test_sizes[1]), 
+             (test_dests[0], test_strings2[2], test_sizes[2]), 
+             (test_dests[0], test_strings2[3], test_sizes[3])]
 
-    # Definizione della funzione ft_strlcpy nella libreria
-    ft_strlcpy = libft.ft_strlcpy
+ids = ["string: {}, size:{}".format(t[1], t[2]) for t in test_data]
+@pytest.mark.parametrize("test_dest, test_string2, test_size",test_data, ids=ids)
 
-    # Define the strlcpy function in the library
-    strlcpy = libbsd.strlcpy
-
-    result = ft_strlcpy(test_dst, test_src, test_size)
-    
-    # chiamare la funzione originale con i dati di input
-    original_result = strlcpy(test_dst, test_src, test_size)
-
-    # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
-    assert result == original_result
-
-def test2_ft_strlcpy():
-
-    # input function
-    test_dst = ctypes.create_string_buffer(b'\0' * 20)
-    test_src = b"ciaocomeva"
-    test_size = 5
+def test_ft_strlcpy(test_dest, test_string2, test_size):
 
     # Definizione della funzione ft_strlcpy nella libreria
     ft_strlcpy = libft.ft_strlcpy
@@ -47,52 +33,10 @@ def test2_ft_strlcpy():
     # Define the strlcpy function in the library
     strlcpy = libbsd.strlcpy
 
-    result = ft_strlcpy(test_dst, test_src, test_size)
+    result = ft_strlcpy(test_dest, test_string2, test_size)
     
     # chiamare la funzione originale con i dati di input
-    original_result = strlcpy(test_dst, test_src, test_size)
-
-    # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
-    assert result == original_result
-
-def test3_ft_strlcpy():
-
-    # input function
-    test_dst = ctypes.create_string_buffer(b'\0' * 20)
-    test_src = b""
-    test_size = 15
-
-    # Definizione della funzione ft_strlcpy nella libreria
-    ft_strlcpy = libft.ft_strlcpy
-
-    # Define the strlcpy function in the library
-    strlcpy = libbsd.strlcpy
-
-    result = ft_strlcpy(test_dst, test_src, test_size)
-    
-    # chiamare la funzione originale con i dati di input
-    original_result = strlcpy(test_dst, test_src, test_size)
-
-    # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
-    assert result == original_result
-
-def test4_ft_strlcpy():
-
-    # input function
-    test_dst = ctypes.create_string_buffer(b'\0' * 20)
-    test_src = b"         \n"
-    test_size = 1
-
-    # Definizione della funzione ft_strlcpy nella libreria
-    ft_strlcpy = libft.ft_strlcpy
-
-    # Define the strlcpy function in the library
-    strlcpy = libbsd.strlcpy
-
-    result = ft_strlcpy(test_dst, test_src, test_size)
-    
-    # chiamare la funzione originale con i dati di input
-    original_result = strlcpy(test_dst, test_src, test_size)
+    original_result = strlcpy(test_dest, test_string2, test_size)
 
     # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
     assert result == original_result
