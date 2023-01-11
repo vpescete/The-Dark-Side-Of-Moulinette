@@ -1,6 +1,7 @@
 import ctypes
 import pytest
 import os
+import sys
 
 # Get the current working directory
 cwd = os.getcwd()
@@ -11,7 +12,10 @@ library_path = os.path.join(cwd, 'libft.so')
 libft = ctypes.cdll.LoadLibrary(library_path)
 libc = ctypes.cdll.LoadLibrary('libc.so.6')
 
-test_data = [[2, 6], [21, 63], [20, 0], [0, 0]]
+SIZE_MAX = sys.maxsize
+SIZE_MAX = ctypes.c_size_t(-1).value
+
+test_data = [[2, 6], [21, 63], [20, 0], [0, 0], [0, ctypes.sizeof(ctypes.c_int)], [SIZE_MAX // ctypes.sizeof(ctypes.c_int) + 1, ctypes.sizeof(ctypes.c_int)]]
 ids = ["num_element: {}, element_size: {}".format(t[0], t[1]) for t in test_data]
 @pytest.mark.parametrize("num_element, element_size", test_data, ids = ids)
 

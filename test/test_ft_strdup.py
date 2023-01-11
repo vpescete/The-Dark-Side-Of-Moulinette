@@ -12,7 +12,7 @@ libft = ctypes.cdll.LoadLibrary(library_path)
 libc = ctypes.cdll.LoadLibrary('libc.so.6')
 
 test_strings = ["CiaoCmondo    ", "    ", "kjcbdsicbksihcbdskcjbsib1nn\n\n\n\n\n\n\t\t\t\t\t\t\t\t %&$$££%$%$£&$   "]
-ids = ["input: '{}'".format(t) for t in test_strings]
+ids = ["input string: '{}'".format(t) for t in test_strings]
 @pytest.mark.parametrize("test_string", test_strings, ids = ids)
 
 def test_ft_strdup(test_string):

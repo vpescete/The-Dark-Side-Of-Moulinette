@@ -14,14 +14,15 @@ library2_path = os.path.join(cwd, 'libft_tester.so')
 libft = ctypes.cdll.LoadLibrary(library_path)
 libft_tester = ctypes.cdll.LoadLibrary(library2_path)
 
-test_strings1 = ["Hello ", "    Ciao mondo", "Porco", "Ciao", ""]
-test_toattachs = ["World", " fanculo", "    Dio", "                                     Stronzo", "+1832dejdn idneibewfiuewh 9jchdbckjdhb"]
+test_strings1 = ["Hello ", "    Ciao mondo", "Porco", "Ciao", "", ""]
+test_toattachs = ["World", " fanculo", "    Dio", "                                     Stronzo", "", "Matteo e' stronzo"]
 
 test_data = [(test_strings1[0], test_toattachs[0]), 
              (test_strings1[1], test_toattachs[1]), 
              (test_strings1[2], test_toattachs[2]), 
              (test_strings1[3], test_toattachs[3]), 
-             (test_strings1[4], test_toattachs[4])]
+             (test_strings1[4], test_toattachs[4]),
+             (test_strings1[5], test_toattachs[5])]
 
 ids = ["string: '{}', to_attach: '{}'".format(t[0], t[1]) for t in test_data]
 @pytest.mark.parametrize("test_string, test_toattach",test_data, ids=ids)

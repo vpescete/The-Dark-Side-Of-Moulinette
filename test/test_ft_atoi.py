@@ -11,7 +11,7 @@ library_path = os.path.join(cwd, 'libft.so')
 libft = ctypes.cdll.LoadLibrary(library_path)
 libc = ctypes.cdll.LoadLibrary('libc.so.6')
 
-test_strings = ["    +18329jchdbckjdhb", "    -18329jchdbckjdhb", "    +-18329jchdbckjdhb", "    +18329234987298472904802498", "    -18329234987298472904802498", "    -+18329234987298472904802498", "    + 18329234987298472904802498"]
+test_strings = ["    +18329jchdbckjdhb", "    -18329jchdbckjdhb", "    +-18329jchdbckjdhb", "    +18329234987298472904802498", "    -18329234987298472904802498", "    -+18329234987298472904802498", ""]
 ids = ["input: '{}'".format(t) for t in test_strings]
 @pytest.mark.parametrize("test_string", test_strings, ids = ids)
 def test_ft_atoi(test_string):

@@ -16,12 +16,12 @@ test_int = [ord('\t'), 66, 99, 66, 0]
 test_sizes = [len(test_dests[0]), len(test_dests[1]), len(test_dests[2]), len(test_dests[3]), len(test_dests[4])]
 
 test_data = [(test_dests[0], test_int[0], test_sizes[0]), 
-             (test_dests[0], test_int[1], test_sizes[1]), 
-             (test_dests[0], test_int[2], test_sizes[2]), 
-             (test_dests[0], test_int[3], test_sizes[3]), 
-             (test_dests[0], test_int[4], test_sizes[4])]
+             (test_dests[1], test_int[1], test_sizes[1]), 
+             (test_dests[2], test_int[2], test_sizes[2]), 
+             (test_dests[3], test_int[3], test_sizes[3]), 
+             (test_dests[4], test_int[4], test_sizes[4])]
 
-ids = ["string: {}, size:{}".format(t[1], t[2]) for t in test_data]
+ids = ["string: {}, char (in int):{}".format(t[0], t[1]) for t in test_data]
 @pytest.mark.parametrize("test_dest, test_string2, test_size",test_data, ids=ids)
 
 def test_ft_memset(test_dest, test_string2, test_size):
