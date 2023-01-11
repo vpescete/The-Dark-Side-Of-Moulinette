@@ -1,5 +1,5 @@
 # The-Dark-Side-Of-Mouinette
-A personal mouinette to check Libft Project of 42 School Common Core
+A personal moulinette to check Libft Project of 42 School Common Core
 
 Here few things before to test:
 
