@@ -15,7 +15,7 @@ From your terminal, move to your libft dir with the command cd.
 Follow the next commands:
  
 # chmod 775 ./to_run
-# ./to_run
+# ./to_run.sh
 
 The script will automatically compile and start all the tests.
 
