@@ -1,5 +1,5 @@
 import ctypes
-
+import pytest
 import os
 
 # Get the current working directory
@@ -7,88 +7,33 @@ cwd = os.getcwd()
 
 # Construct the full path to the library file
 library_path = os.path.join(cwd, 'libft.so')
-
-
 libft = ctypes.cdll.LoadLibrary(library_path)
         
 ft_putchar_fd = libft.ft_putchar_fd
 
-def test1_ft_putchar_fd():
-# Apri un file di test in scrittura
-    with open('test1.txt', 'wb') as f:
+test_chars = [66, 62, 48, 32, 127]
+expecteds = ['B', '>', '0', ' ', chr(127)]
+
+test_data = [[test_chars[0], expecteds[0]],
+             [test_chars[1], expecteds[1]],
+             [test_chars[2], expecteds[2]],
+             [test_chars[3], expecteds[3]],
+             [test_chars[4], expecteds[4]]]
+
+ids = ["char: {}".format(t[0]) for t in test_data]
+@pytest.mark.parametrize("test_char, expected",test_data, ids=ids)
+
+def test_ft_putchar_fd(test_char, expected):
+    with open('test.txt', 'wb') as f:
         # Verifica che il file descriptor sia valido
         assert f.fileno() > 0
 
-        c = 66
+        c = test_char
 
         # Usa ft_putchar_fd per scrivere un carattere nel file
         result = ft_putchar_fd(c, f.fileno())
 
     # Apri il file di test in lettura
-    with open('test1.txt', 'rb') as f:
+    with open('test.txt', 'rb') as f:
             # Verifica che il file contenga solo il carattere scritto
-            assert chr(f.read()[0]) == 'B'
-
-def test2_ft_putchar_fd():
-# Apri un file di test in scrittura
-    with open('test2.txt', 'wb') as f:
-        # Verifica che il file descriptor sia valido
-        assert f.fileno() > 0
-
-        c = 62
-
-        # Usa ft_putchar_fd per scrivere un carattere nel file
-        result = ft_putchar_fd(c, f.fileno())
-
-    # Apri il file di test in lettura
-    with open('test2.txt', 'rb') as f:
-            # Verifica che il file contenga solo il carattere scritto
-            assert chr(f.read()[0]) == '>'
-
-def test3_ft_putchar_fd():
-# Apri un file di test in scrittura
-    with open('test3.txt', 'wb') as f:
-        # Verifica che il file descriptor sia valido
-        assert f.fileno() > 0
-
-        c = 48
-
-        # Usa ft_putchar_fd per scrivere un carattere nel file
-        result = ft_putchar_fd(c, f.fileno())
-
-    # Apri il file di test in lettura
-    with open('test3.txt', 'rb') as f:
-            # Verifica che il file contenga solo il carattere scritto
-            assert chr(f.read()[0]) == '0'
-
-def test4_ft_putchar_fd():
-# Apri un file di test in scrittura
-    with open('test4.txt', 'wb') as f:
-        # Verifica che il file descriptor sia valido
-        assert f.fileno() > 0
-
-        c = 32
-
-        # Usa ft_putchar_fd per scrivere un carattere nel file
-        result = ft_putchar_fd(c, f.fileno())
-
-    # Apri il file di test in lettura
-    with open('test4.txt', 'rb') as f:
-            # Verifica che il file contenga solo il carattere scritto
-            assert chr(f.read()[0]) == ' '
-
-def test5_ft_putchar_fd():
-# Apri un file di test in scrittura
-    with open('test5.txt', 'wb') as f:
-        # Verifica che il file descriptor sia valido
-        assert f.fileno() > 0
-
-        c = 127
-
-        # Usa ft_putchar_fd per scrivere un carattere nel file
-        result = ft_putchar_fd(c, f.fileno())
-
-    # Apri il file di test in lettura
-    with open('test5.txt', 'rb') as f:
-            # Verifica che il file contenga solo il carattere scritto
-            assert chr(f.read()[0]) == chr(127)
+            assert chr(f.read()[0]) == expected

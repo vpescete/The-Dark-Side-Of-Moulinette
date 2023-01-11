@@ -13,7 +13,9 @@ libc = ctypes.cdll.LoadLibrary('libc.so.6')
 
 test_strings = [110, 90, 99, 67, 127]
 
-@pytest.mark.parametrize("test_string", test_strings)
+ids = ["input char: {}".format(t) for t in test_strings]
+@pytest.mark.parametrize("test_string",test_strings, ids=ids)
+
 def test_ft_toupper(test_string):
     # Define the function ft_toupper in the library
     ft_toupper = libft.ft_toupper

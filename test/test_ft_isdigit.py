@@ -13,7 +13,9 @@ libc = ctypes.cdll.LoadLibrary('libc.so.6')
 
 test_strings = [99, 48, 56, 127, 0]
 
-@pytest.mark.parametrize("test_string", test_strings)
+ids = ["input char: {}".format(t) for t in test_strings]
+@pytest.mark.parametrize("test_string",test_strings, ids=ids)
+
 def test_ft_isdigit(test_string):
     # Define the function ft_isdigit in the library
     ft_isdigit = libft.ft_isdigit

@@ -13,7 +13,9 @@ libc = ctypes.cdll.LoadLibrary('libc.so.6')
 
 test_strings = [99, 1, 999, 127, 50]
 
-@pytest.mark.parametrize("test_string", test_strings)
+ids = ["input char: {}".format(t) for t in test_strings]
+@pytest.mark.parametrize("test_string",test_strings, ids=ids)
+
 def test_ft_isalnum(test_string):
     # Define the function ft_isalnum in the library
     ft_isalnum = libft.ft_isalnum

@@ -13,7 +13,9 @@ libc = ctypes.cdll.LoadLibrary('libc.so.6')
 
 test_strings = [67, 12, 102, 70, 0]
 
-@pytest.mark.parametrize("test_string", test_strings)
+ids = ["input char: {}".format(t) for t in test_strings]
+@pytest.mark.parametrize("test_string",test_strings, ids=ids)
+
 def test_ft_isalpha(test_string):
     # Define the function ft_isalpha in the library
     ft_isalpha = libft.ft_isalpha

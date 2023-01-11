@@ -13,7 +13,9 @@ libc = ctypes.cdll.LoadLibrary('libc.so.6')
 
 test_strings = [90, 68, 48, 32, 102]
 
-@pytest.mark.parametrize("test_string", test_strings)
+ids = ["input char: {}".format(t) for t in test_strings]
+@pytest.mark.parametrize("test_string",test_strings, ids=ids)
+
 def test_ft_tolower(test_string):
     # Define the function ft_tolower in the library
     ft_tolower = libft.ft_tolower
