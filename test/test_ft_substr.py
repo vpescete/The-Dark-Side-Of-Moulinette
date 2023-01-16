@@ -34,11 +34,13 @@ def test_ft_substr(test_dest, test_int, test_size):
 
     # Define the substr function in the library
     substr = libft_tester.substr
+    
+    test_string_buffer = ctypes.create_string_buffer(test_dest.encode())
 
-    result = ctypes.string_at(ft_substr(test_dest, test_int, test_size))
+    result = ctypes.string_at(ft_substr(test_string_buffer, test_int, test_size))
     
     # chiamare la funzione originale con i dati di input
-    original_result = ctypes.string_at(substr(test_dest, test_int, test_size))
+    original_result = ctypes.string_at(substr(test_string_buffer, test_int, test_size))
 
     # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
     assert result == original_result

@@ -34,5 +34,8 @@ def test_ft_itoa(test_int):
     # chiamare la funzione originale con i dati di input   
     original_result = ctypes.string_at(itoa(test_int))
     
+    print(result)
+    print(original_result)
+    
     # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
     assert result == original_result

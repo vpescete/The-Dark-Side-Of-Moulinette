@@ -26,8 +26,8 @@ def test_ft_strchr(test_src, test_char):
 
     test_src = bytes(test_src, 'utf-8')
     
-    result = print(ft_strchr(test_src, test_char))
-    original_result = print(strchr(test_src, test_char))
+    result = ft_strchr(test_src, test_char)
+    original_result = strchr(test_src, test_char)
 
     # verificare che il risultato ottenuto sia uguale al risultato della funzione originale
-    assert result == original_result 
+    assert hex(result) == hex(original_result)

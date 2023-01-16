@@ -1,12 +1,7 @@
 import ctypes
 import pytest
-
 import os
 
-import ctypes
-import pytest
-
-import os
 
 # Get the current working directory
 cwd = os.getcwd()

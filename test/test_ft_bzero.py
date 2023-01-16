@@ -25,11 +25,9 @@ def test_ft_bzero(input_list):
     # Define the ft_bzero function
     ft_bzero = libft.ft_bzero
     bzero = libc.bzero
-
+    
     result = ft_bzero(input_ptr, input_len)
     original_result = bzero(input_ptr, input_len)
-
-    # Check that all bytes in the input_buf are set to 0
     input_buf_str = ctypes.string_at(input_ptr, input_len)
     assert input_buf_str.count(0) == input_len
     assert all(i == 0 for i in input_buf_str)
